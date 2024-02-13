@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">Calculator</string>
+    <string name="menu_settings">Settings</string>
+    <string name="action_settings">Settings</string>
+    <string name="button0">0</string>
+    <string name="button1">1</string>
+    <string name="button2">2</string>
+    <string name="button3">3</string>
+    <string name="button4">4</string>
+    <string name="button5">5</string>
+    <string name="button6">6</string>
+    <string name="button7">7</string>
+    <string name="button8">8</string>
+    <string name="button9">9</string>
+    <string name="buttonPi">"\u03c0"</string>
+    <string name="buttonAdd">+</string>
+    <string name="buttonSubtract">-</string>
+    <string name="buttonMultiply">*</string>
+    <string name="buttonDivide">/</string>
+    <string name="buttonDot">.</string>
+    <string name="buttonEquals">=</string>
+    <string name="buttonEnter">Enter</string>
+    <string name="buttonClear">delX</string>
+    <string name="buttonClearMemory">MC</string>
+    <string name="buttonChangeXY">"x \u003c\u003e y"</string>
+    <string name="buttonSubtractFromMemory">M-</string>
+    <string name="buttonSquareRoot">"\u221Ax""</string>
+    <string name="buttonTheta">\u03B8</string>
+    <string name="buttonPlusMinus">+/-</string>
+    <string name="buttonInvert">1/x</string>
+    <string name="buttonExp">e<sup>x</sup></string>
+    <string name="buttonYX">y<sup>x</sup></string>
+    <string name="buttonLn">"ln(x)"</string>
+    <string name="buttonTangens">tan</string>
+    <string name="buttonPrec">"prec"</string>
+    <string name="buttonE">E</string>
+    <string name="buttonCplx">Cplx</string>
+    <string name="your_string">H<sub>2</sub></string>
+
+    <string name="buttontheta">\u03B8</string>
+</resources>
