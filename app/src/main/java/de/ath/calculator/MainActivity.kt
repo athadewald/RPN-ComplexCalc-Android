@@ -83,7 +83,7 @@ class MainActivity : ComponentActivity() {
 
         fun toPol(num: Complex, conFac: Double): Complex {
             if (num.imag() != 0.0) {
-                Log.d("conv", phase(num).toString())
+//                Log.d("conv", phase(num).toString())
                 return Complex(betrag(num), phase(num) * conFac, true)
             }
             else
@@ -294,41 +294,27 @@ class MainActivity : ComponentActivity() {
             showDisplay()
             overrideFlag = true
         }
+        fun angleCorrection(value: Double): Double {
+            var degRadValue: Double = 2 * PI
+            if (radiobuttonDeg.isChecked)
+                degRadValue = 360.0
+            var retValue: Double = value % degRadValue
+            if (abs(retValue) > (degRadValue / 2.0)) {
+                if (retValue >= 0)
+                    retValue = retValue.mod(degRadValue / 2.0) - degRadValue / 2.0
+                else
+                    retValue =  degRadValue / 2.0 - abs(retValue).mod(degRadValue / 2.0)
+            }
+            return retValue
+        }
+
         fun pressComplex() {
             checkDisplayInput(textView1.text.toString())
             if (numX.imag() == 0.0 && numY.imag() == 0.0) {
                 if (radiobuttonRect.isChecked)
                     numX = Complex(numY.real(), numX.real(), false)
-                else {
-                    if (radiobuttonDeg.isChecked) {
-                        if (abs(numX.real()) >= 360.0) {
-                            val diffRest: Double = numX.real() / 360.0 - floor(numX.real() / 360)
-                            Log.d("conv", diffRest.toString())
-                            numX = Complex(diffRest * 360, 0.0, true)
-                        }
-                        if (abs(numX.real()) > 180.0 && abs(numX.real()) < 360.0) {
-                            if (numX.real() > 0) {
-                                numX = numX - Complex(360.0, 0.0, true)
-                            }
-                            else
-                                numX = numX + Complex(360.0, 0.0, true)
-                        }
-                    }
-                    else {
-                        if (abs(numX.real()) >= 2 * PI) {
-                            val diffRest: Double =
-                                numX.real() / (2 * PI) - floor(numX.real() / (2 * PI))
-                            numX = Complex(diffRest * 2 * PI, 0.0, true)
-                        }
-                        if (abs(numX.real()) > PI && abs(numX.real()) < 2 * PI) {
-                            if (numX.real() > 0) {
-                                numX = numX - Complex(2 * PI, 0.0, true)
-                            } else
-                                numX = numX + Complex(2 * PI, 0.0, true)
-                        }
-                    }
-                    numX = Complex(numY.real(), numX.real(), true)
-                }
+                else
+                    numX = Complex(numY.real(), angleCorrection(numX.real()), true)
                 dropStack()
             } else if (numX.imag() != 0.0) {
                 var bufferX: Complex = numX
