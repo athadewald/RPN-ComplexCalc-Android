@@ -1,19 +1,17 @@
 package de.ath.calculator
 
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.RadioButton
 import android.widget.TextView
 import androidx.activity.ComponentActivity
+import kotlin.math.E
 import kotlin.math.PI
+import kotlin.math.abs
 import kotlin.math.atan2
 import kotlin.math.cos
 import kotlin.math.sin
 import kotlin.math.sqrt
-import kotlin.math.E
-import kotlin.math.abs
-import kotlin.math.floor
 
 
 class MainActivity : ComponentActivity() {
